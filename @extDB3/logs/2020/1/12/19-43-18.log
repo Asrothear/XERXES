@@ -1,0 +1,39 @@
+
+extDB3: https://bitbucket.org/torndeco/extdb3/wiki/Home
+extDB3: Version: 1.031
+extDB3: Windows Version
+Message: All development for extDB3 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB3 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 18/05/15
+
+
+extDB3: Found extdb3-conf.ini
+extDB3: Detected 4 Cores, Setting up 4 Worker Threads
+extDB3: ...
+extDB3: ...
+extDB3: ...
+extDB3: ...
+
+
+[19:44:50:779573 +01:00] [Thread 2640] extDB3: Locked
+[19:45:57:221700 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[19:45:57:244880 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Azrael:Azrael:76561198056732315
+[20:00:40:878412 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:00:40:878495 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:colin:unste:76561198218668404
+[20:02:17:722575 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:02:17:722651 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Azrael:Azrael:76561198056732315
+[20:03:35:291237 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:03:35:291361 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:colin:unste:76561198218668404
+[20:13:44:419433 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:13:44:419510 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Zitrone:Zitrone:76561198239158828
+[20:15:12:302275 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:15:12:302309 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Neo:Neo:76561198109827851
+[20:15:12:771127 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:15:12:771170 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Thorwalth:Thorwalth:76561198185929999
+[20:27:16:671434 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[20:27:16:671602 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Azrael:Azrael:76561198056732315
+[22:02:47:950098 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Config Invalid Number Number of Inputs Got 3 Expected 12
+[22:02:47:950283 +01:00] [Thread 2640] extDB3: SQL: Error extDB3Exception: Input: db_insert_player:Azrael:Azrael:76561198056732315

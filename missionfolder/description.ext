@@ -1,0 +1,36 @@
+#include "infiSTAR_AdminMenu.hpp"
+respawnOnStart = 1;
+class CfgDebriefing {
+	class nochef {
+        title = Fehlende Berechtigung;
+        subTitle = Dies ist ein Reservierter Slot;
+        description = Bitte wähle einen anderen Slot um zu Joinen.;
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0,0.3,0.6,1};
+    };
+	class noRank {
+        title = Fehlende Qualifikation;
+        subTitle = Du bist nicht für diesen Posten Ausgebildet;
+        description = Melde dich bei der Ausbildungsstelle wenn du Interesse hast.;
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0,0.3,0.6,1};
+    };	
+	class noGear {
+        title = Fehler beim Laden des Gears;
+        subTitle = Es gab ein Fehler bei der erkennung des Loadouts;
+        description = Melde dich bitte bei einem Admin auf ts.asrothear.de.;
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0,0.3,0.6,1};
+    };
+	class dontcreate {
+        title = Zugriff gesperrt;
+        subTitle = Du darft auf diesen Slot nicht Joinen;
+        description = Melde dich bei einem Admin um die Sache zu klären.;
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0,0.3,0.6,1};
+    };
+};
