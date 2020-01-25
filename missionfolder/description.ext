@@ -1,4 +1,4 @@
-#include "infiSTAR_AdminMenu.hpp"
+
 respawnOnStart = 1;
 class CfgDebriefing {
 	class nochef {
@@ -16,7 +16,7 @@ class CfgDebriefing {
         pictureBackground = "";
         picture = "";
         pictureColor[] = {0,0.3,0.6,1};
-    };	
+    };
 	class noGear {
         title = Fehler beim Laden des Gears;
         subTitle = Es gab ein Fehler bei der erkennung des Loadouts;
