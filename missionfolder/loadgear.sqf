@@ -8,9 +8,11 @@ sleep 2;
 //sleep 2;
 private ["_class"];
 _class = _this select 0;
-
+sleep 30;
+hint "Waiting for Player movement";
+waituntil {(speed player > 1)};
 switch (_class) do {
-    case 1: 
+    case 1:
 	{ 
 		hint "Med Gear";
 		sleep 1;
@@ -75,7 +77,7 @@ switch (_class) do {
 		sleep 1;
 	};
     case 2:
-	{ 
+	{
 		hint "Pio Gear";
 		sleep 1;
 		comment "Remove existing items";
@@ -266,8 +268,8 @@ switch (_class) do {
 		hint "Gear Loaded!";
 		sleep 1;
 	};
-	default 
-	{ 
+	default
+	{
 		hint "Gear Loading Failed!\nPlease Report to Azrael";
 		sleep 5;
 		["noGear",false,true] call BIS_fnc_endMission;

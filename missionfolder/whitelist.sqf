@@ -14,9 +14,7 @@ while {true} do {
 waitUntil {!isNull player};
 waitUntil {(vehicle player) == player};
 waitUntil {(getPlayerUID player) != ""};
-sleep 30;
-hint "Waiting for Player movement";
-waituntil {(speed player > 1)};
+sleep 5;
 
 _id = getPlayerUID player;
 _unit = player;
@@ -30,7 +28,7 @@ _sch = [s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_8,s_9,s_10,s_11,s_12,s_13,s_14,s_15,s_16,s
 _cre = [c_1,c_2,c_3,c_4,c_5,c_6,c_7,c_8,c_9,c_10];
 
 
-hint "Movement detected, runnig Slot check ...";
+hint "Runnig Slot check ...";
 _reload = false;
 //Whitelist für slot "a_1" nur für Lord
 if ((player in _lor)&& !(_uid == "76561198056732315")) exitwith
