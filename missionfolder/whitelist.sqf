@@ -1,14 +1,17 @@
 diag_log "[XERXES] Whitelisting loading";
 hint "Whitelisting loading";
 
-private ["_lor", "_mlvl", "_plvl", "_unic", "_blck", "_med", "_pio", "_spe", "_sch", "_r_lor" ,"_r_med","_r_pio","_r_spe", "_cre", "_r_cre", "_r_mai", "_handle"];
+private ["_lor", "_mlvl", "_plvl", "_unic", "_blck", "_med", "_pio", "_spe", "_sch", "_r_lor" ,"_r_med","_r_pio","_r_spe", "_cre", "_r_cre", "_r_mai"];
 waitUntil {!isNull player};
 hint "Whitelisting loading ...";
+/*
 player setVariable ["id", "nix", true];
 player setVariable ["mlvl", "nix", true];
 player setVariable ["plvl", "nix", true];
 player setVariable ["unic", "nix", true];
 player setVariable ["blck", "nix", true];
+*/
+//remove Player gear to prevent Gear glitches
 removeAllWeapons player;
 removeAllItems player;
 removeAllAssignedItems player;
@@ -17,6 +20,7 @@ removeVest player;
 removeBackpack player;
 removeHeadgear player;
 removeGoggles player;
+
 while {true} do {
 
 waitUntil {!isNull player};
@@ -24,10 +28,11 @@ waitUntil {(vehicle player) == player};
 waitUntil {(getPlayerUID player) != ""};
 sleep 5;
 
+//get Data from Database
 _id = getPlayerUID player;
 _unit = player;
 ["db_get_data", [_id, _unit]] call CBA_fnc_globalEvent;
-sleep 1;
+
 _lor = [a_1,a_2,a_3,a_4,a_5];
 _med = [m_1,m_2,m_3,m_4,m_5,m_6,m_7,m_8,m_9,m_10,m_11,m_12,m_13,m_14,m_15];
 _pio = [p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,p_9,p_10,p_11,p_12,p_13,p_14,p_15];
@@ -54,7 +59,6 @@ if ((player in _lor)&& !(_uid == "76561198056732315")) exitwith
  //Whitelist für Sani. Kann ja jeder kommen der mal ein Pflaster benutzt hat.
 if ((player in _med)) exitwith {
 	hint "Medic";
-	sleep 1;
 	_mlvl = player getVariable "mlvl";
 	if ((_mlvl) >= 1) exitwith {
 		hint "Whitelist Checked";
@@ -72,7 +76,6 @@ if ((player in _med)) exitwith {
  //Whitelist für Pioniere. Sandburgen baut jeder, Festungen  nur die, die es auch können
 if ((player in _pio)) exitwith {
 	hint "Pionier";
-	sleep 1;
 	_plvl = player getVariable "plvl";
 	if ((_plvl) >= 1) exitwith {
 		hint "Whitelist Checked";
@@ -91,7 +94,6 @@ if ((player in _pio)) exitwith {
  //Whitelist für Spec-Ops. Wenn du in abosluter Dunkelheit Jermone sehen kannst, ohne das er grinst reden wir weiter.
 if ((player in _spe)) exitwith {
 	hint "Unicorn";
-	sleep 1;
 	_unic = player getVariable "unic";
 	if ((_unic) >= 1) exitwith {
 		hint "Whitelist Checked";
