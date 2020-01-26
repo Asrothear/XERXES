@@ -9,6 +9,14 @@ player setVariable ["mlvl", "nix", true];
 player setVariable ["plvl", "nix", true];
 player setVariable ["unic", "nix", true];
 player setVariable ["blck", "nix", true];
+removeAllWeapons player;
+removeAllItems player;
+removeAllAssignedItems player;
+removeUniform player;
+removeVest player;
+removeBackpack player;
+removeHeadgear player;
+removeGoggles player;
 while {true} do {
 
 waitUntil {!isNull player};
