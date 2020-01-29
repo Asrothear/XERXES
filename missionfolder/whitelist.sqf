@@ -12,6 +12,7 @@ player setVariable ["unic", "nix", true];
 player setVariable ["blck", "nix", true];
 */
 //remove Player gear to prevent Gear glitches
+waitUntil {!isNull player};
 removeAllWeapons player;
 removeAllItems player;
 removeAllAssignedItems player;
@@ -20,6 +21,9 @@ removeVest player;
 removeBackpack player;
 removeHeadgear player;
 removeGoggles player;
+player forceAddUniform "U_C_Protagonist_VR";
+player linkItem "ItemMap";
+player linkItem "ACE_Altimeter";
 
 while {true} do {
 

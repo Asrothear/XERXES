@@ -8,6 +8,11 @@ PROTOCOL_connect_MilSim = call compile ("extDB3" callExtension "9:ADD_DATABASE_P
 //lock DB for system commands beginning with 9:
 "extDB3" callExtension "9:LOCK:unlock_me";
 // Fehlerbehandlung bei gescheiterter Verbindung
-if ((DB_connect_MilSimDB select 0 == 0) and !(DB_connect_MilSimDB select 1 isEqualTo "Already Connected to Database")) exitWith {diag_log format["[XERXES] error with ADD_DATABASE: %1", DB_connect_MilSimDB select 1]};
+if ((DB_connect_MilSimDB select 0 == 0) and !(DB_connect_MilSimDB select 1 isEqualTo "Already Connected to Database")) exitWith
+  {diag_log format["[XERXES] error with ADD_DATABASE: %1", DB_connect_MilSimDB select 1]
+};
+if ((PROTOCOL_connect_MilSim select 0 == 0) and !(PROTOCOL_connect_MilSim select 1 isEqualTo "Error Protocol Name Already Taken")) exitWith {
+  diag_log format["[XERXES] error with ADD_DATABASE_PROTOCOL: %1", PROTOCOL_connect_MilSim select 1]
+};
+_query = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_check_conncetion:%1", "arma"]);
 diag_log "[XERXES] DB-Anbindung erfolgreich!";
-if ((PROTOCOL_connect_MilSim select 0 == 0) and !(PROTOCOL_connect_MilSim select 1 isEqualTo "Error Protocol Name Already Taken")) exitWith {diag_log format["[XERXES] error with ADD_DATABASE_PROTOCOL: %1", PROTOCOL_connect_MilSim select 1]};

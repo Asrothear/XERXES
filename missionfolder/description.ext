@@ -20,7 +20,7 @@ class CfgDebriefing {
 	class noGear {
         title = Fehler beim Laden des Gears;
         subTitle = Es gab ein Fehler bei der erkennung des Loadouts;
-        description = Melde dich bitte bei einem Admin auf ts.asrothear.de.;
+        description = Melde dich bitte bei einem Admin auf ts.asrothear.de mit dem Inhalt dieser Meldung.;
         pictureBackground = "";
         picture = "";
         pictureColor[] = {0,0.3,0.6,1};
@@ -33,4 +33,12 @@ class CfgDebriefing {
         picture = "";
         pictureColor[] = {0,0.3,0.6,1};
     };
+	class dbError {
+	       title = Fehler beim Laden von [XERXES];
+	       subTitle = Es gab ein Fehler bei der verbindung mit det DB;
+	       description = Melde dich bitte bei einem Admin auf ts.asrothear.de mit dem Inhalt dieser Meldung.;
+	       pictureBackground = "";
+	       picture = "";
+	       pictureColor[] = {0,0.3,0.6,1};
+	   };
 };
