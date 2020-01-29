@@ -2,18 +2,14 @@ diag_log "[XERXES] Gear loading";
 waitUntil {!isNull player};
 waitUntil {(vehicle player) == player};
 sleep 2;
-//hint"Azrael´s Gear Loader";
-//sleep 2;
-//hint"Gear is loading ...";
-//sleep 2;
 private ["_class"];
 _class = _this select 0;
-sleep 30;
+sleep 20;
 hint "Waiting for Player movement";
 waituntil {(speed player > 1)};
 switch (_class) do {
     case 1:
-	{ 
+	{
 		hint "Med Gear";
 		sleep 1;
 		removeAllWeapons player;

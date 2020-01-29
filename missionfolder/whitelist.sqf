@@ -4,13 +4,6 @@ hint "Whitelisting loading";
 private ["_lor", "_mlvl", "_plvl", "_unic", "_blck", "_med", "_pio", "_spe", "_sch", "_r_lor" ,"_r_med","_r_pio","_r_spe", "_cre", "_r_cre", "_r_mai"];
 waitUntil {!isNull player};
 hint "Whitelisting loading ...";
-/*
-player setVariable ["id", "nix", true];
-player setVariable ["mlvl", "nix", true];
-player setVariable ["plvl", "nix", true];
-player setVariable ["unic", "nix", true];
-player setVariable ["blck", "nix", true];
-*/
 //remove Player gear to prevent Gear glitches
 waitUntil {!isNull player};
 removeAllWeapons player;

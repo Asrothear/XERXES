@@ -4,9 +4,6 @@ diag_log "[XERXES]  MilSim Init";
 ["db_get_data", {
 params ["_id","_unit"];
 diag_log "TRY!A";
-db_var_startParams = _this;
-ResultContent = nil;
-serverRunningQuery = true;
 _query = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_get_player:%1", _id]);
 _result = _query select 1;
 _result = _result select 0;
