@@ -14,5 +14,5 @@ if ((DB_connect_MilSimDB select 0 == 0) and !(DB_connect_MilSimDB select 1 isEqu
 if ((PROTOCOL_connect_MilSim select 0 == 0) and !(PROTOCOL_connect_MilSim select 1 isEqualTo "Error Protocol Name Already Taken")) exitWith {
   diag_log format["[XERXES] error with ADD_DATABASE_PROTOCOL: %1", PROTOCOL_connect_MilSim select 1]
 };
-_query = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_check_conncetion:%1", "arma"]);
+_query = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_check_conncetion:%1"]);
 diag_log "[XERXES] DB-Anbindung erfolgreich!";

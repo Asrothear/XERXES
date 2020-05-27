@@ -1,4 +1,4 @@
-
+#include "infiSTAR_AdminMenu.hpp"
 respawnOnStart = 1;
 class CfgDebriefing {
 	class nochef {

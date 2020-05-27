@@ -10,9 +10,8 @@ _ones = "1";
 // check if payler exist
 _query0 = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_find_player:%1", _id]);
 _result = _query0 select 1;
-_result = _result select 0;
-_asw = _result; 
-if (count _asw == 0) then {
+_asw = _result select 0;
+if (isNil "_asw") then {
 	_query = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_insert_player:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12", _name, _name, _id, _null, _null, _null, _null, _null, _null, _ones, _null, _null]);
 	diag_log format ["[XERXES] Result add palyer to DB : %1 :", _query];
 	} else {
