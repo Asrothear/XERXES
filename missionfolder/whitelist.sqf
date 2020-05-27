@@ -44,7 +44,7 @@ _reload = false;
 //Whitelist für slot "a_1" nur für Lord
 if (player in _lor) exitwith
    {
-   if (_uid != "76561198056732315") exitwith{
+   if (_id != "76561198056732315") exitwith{
 	titleText ["", "BLACK OUT"];
 	disableUserInput true;
 	hint "Dieser Slot ist für Azrael Reserviert!";
