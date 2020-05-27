@@ -31,7 +31,7 @@ _id = getPlayerUID player;
 _unit = player;
 ["db_get_data", [_id, _unit]] call CBA_fnc_globalEvent;
 sleep 1;
-_lor = [a_1,a_2,a_3,a_4,a_5];
+_lor = [a_1];
 _med = [m_1,m_2,m_3,m_4,m_5,m_6,m_7,m_8,m_9,m_10,m_11,m_12,m_13,m_14,m_15];
 _pio = [p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,p_9,p_10,p_11,p_12,p_13,p_14,p_15];
 _spe = [z_1,z_2,z_3,z_4,z_5,z_6,z_7,z_8,z_9,z_10,z_11,z_12,z_13,z_14,z_15];
@@ -53,6 +53,9 @@ if (player in _lor) exitwith
 	disableUserInput false;
 	["noChef",false,true] call BIS_fnc_endMission;
 	};
+	hint "Whitelist Checked";
+	sleep 1;
+	[4] execVM "loadgear.sqf";
    };
 
 

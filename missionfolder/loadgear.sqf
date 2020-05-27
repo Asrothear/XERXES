@@ -250,7 +250,6 @@ switch (_class) do {
     for "_i" from 1 to 5 do {player addItemToVest "SmokeShell";};
     for "_i" from 1 to 5 do {player addItemToVest "SmokeShellRed";};
     for "_i" from 1 to 5 do {player addItemToVest "SmokeShellGreen";};
-    for "_i" from 1 to 4 do {player addItemToVest "30Rnd_556x45_Stanag_Sand_green";};
     for "_i" from 1 to 3 do {player addItemToVest "B_IR_Grenade";};
     for "_i" from 1 to 10 do {player addItemToBackpack "ACE_fieldDressing";};
     for "_i" from 1 to 10 do {player addItemToBackpack "ACE_elasticBandage";};
