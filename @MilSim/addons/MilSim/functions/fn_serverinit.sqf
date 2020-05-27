@@ -25,12 +25,18 @@ _plvl = parseNumber (_result select 5);
 _unic = parseNumber (_result select 6);
 _blck = parseNumber (_result select 7);
 
-//unit = _unit;
+publicVariable "id";
+publicVariable "mlvl";
+publicVariable "plvl";
+publicVariable "unic";
+publicVariable "blck";
+
 _unit setVariable ["id", _id, true];
 _unit setVariable ["mlvl", _mlvl, true];
 _unit setVariable ["plvl", _plvl, true];
 _unit setVariable ["unic", _unic, true];
 _unit setVariable ["blck", _blck, true];
+
 
 diag_log format ["[XERXES] %1 auf Slot %2 mit Variablen id=%3, mlvl=%4, plvl=%5, unic=%6, blck=%7 beschrieben", _name, _unit, _id, _mlvl, _plvl, _unic, _blck];
 }] call CBA_fnc_addEventHandler;
@@ -38,10 +44,10 @@ diag_log format ["[XERXES] %1 auf Slot %2 mit Variablen id=%3, mlvl=%4, plvl=%5,
 ["toggle_train", {
 params ["_unit"];
 TrainingCourse_Server_Blocked = !TrainingCourse_Server_Blocked;
-"hello" remoteExec ["hint", _unit]; 
+"hello" remoteExec ["hint", _unit];
  }] call CBA_fnc_addEventHandler;
 
-removeAllActions arsenal_2;
+removeAllActions arsenal_1;
 [arsenal_1, ["Standart Gear Laden",{[] execVM "whitelist.sqf";}, [], 6, false, true, "", "", 6]] remoteExec ["addAction",-2,true];
 [arsenal_1, ["Arsenal",{[player, player, true] call ace_arsenal_fnc_openBox}, [], 6, false, true, "", "", 6]] remoteExec ["addAction",-2,true];
 
@@ -56,31 +62,31 @@ removeAllActions arsenal_2;
 removeAllActions currym_1;
 removeAllActions currym_2;
 removeAllActions currym_3;
-[currym_1, 
+[currym_1,
 	["Aufschrift lesen",
 	{
 		hint format["Marshmallow´s mit Curry Geschmack \n Das ist die teuerste Sorte die es zu kaufen gibt... \n Für so etwas haben wir Geld \n aber für bessere Ausrüstung nicht ??"];
 	},
 	[], 6, false, true, "", "", 6]
-	] 
+	]
 	remoteExec ["addAction",-2,true];
-	
-[currym_2, 
+
+[currym_2,
 	["Aufschrift lesen",
 	{
 		hint format["Marshmallow´s mit Curry Geschmack \n Das ist die teuerste Sorte die es zu kaufen gibt... \n Für so etwas haben wir Geld \n aber für bessere Ausrüstung nicht ??"];
 	},
 	[], 6, false, true, "", "", 6]
-	] 
+	]
 	remoteExec ["addAction",-2,true];
-	
-[currym_3, 
+
+[currym_3,
 	["Aufschrift lesen",
 	{
 		hint format["Marshmallow´s mit Curry Geschmack \n Das ist die teuerste Sorte die es zu kaufen gibt... \n Für so etwas haben wir Geld \n aber für bessere Ausrüstung nicht ??"];
 	},
 	[], 6, false, true, "", "", 6]
-	] 
+	]
 	remoteExec ["addAction",-2,true];
 
 while {true} do {

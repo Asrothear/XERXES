@@ -18,11 +18,6 @@ player linkItem "ItemMap";
 player linkItem "ACE_Altimeter";
 
 sleep 1;
-player setVariable ["id", "nix", true];
-player setVariable ["mlvl", "nix", true];
-player setVariable ["plvl", "nix", true];
-player setVariable ["unic", "nix", true];
-player setVariable ["blck", "nix", true];
 
 while {true} do {
 
@@ -58,9 +53,9 @@ if (player in _lor) exitwith
 	disableUserInput false;
 	["noChef",false,true] call BIS_fnc_endMission;
 	};
-   };  
-   
-   
+   };
+
+
  //Whitelist für Sani. Kann ja jeder kommen der mal ein Pflaster benutzt hat.
 if ((player in _med)) exitwith {
 	hint "Medic";
@@ -69,7 +64,7 @@ if ((player in _med)) exitwith {
 	if ((_mlvl) >= 1) exitwith {
 		hint "Whitelist Checked";
 		sleep 1;
-		[1] execVM "loadgear.sqf"; 
+		[1] execVM "loadgear.sqf";
 		};
 	titleText ["", "BLACK OUT"];
 	disableUserInput true;
@@ -87,7 +82,7 @@ if ((player in _pio)) exitwith {
 	if ((_plvl) >= 1) exitwith {
 		hint "Whitelist Checked";
 		sleep 1;
-		[2] execVM "loadgear.sqf"; 
+		[2] execVM "loadgear.sqf";
 	};
 	titleText ["", "BLACK OUT"];
 	disableUserInput true;
@@ -97,7 +92,7 @@ if ((player in _pio)) exitwith {
 	disableUserInput false;
 	["noRank",false,true] call BIS_fnc_endMission;
 	};
-   
+
  //Whitelist für Spec-Ops. Wenn du in abosluter Dunkelheit Jermone sehen kannst, ohne das er grinst reden wir weiter.
 if ((player in _spe)) exitwith {
 	hint "Unicorn";
@@ -106,7 +101,7 @@ if ((player in _spe)) exitwith {
 	if ((_unic) >= 1) exitwith {
 		hint "Whitelist Checked";
 		sleep 1;
-		[3] execVM "loadgear.sqf"; 
+		[3] execVM "loadgear.sqf";
 	};
 	titleText ["", "BLACK OUT"];
 	disableUserInput true;
@@ -116,7 +111,7 @@ if ((player in _spe)) exitwith {
 	disableUserInput false;
 	["noRank",false,true] call BIS_fnc_endMission;
 	};
-   
+
  //Blacklist für MissionCreator. Hat da jemand etwas angestellt?
  _blck = player getVariable "blck";
  if ((player in _cre) && ((_blck) == 1))exitwith
@@ -129,11 +124,11 @@ if ((player in _spe)) exitwith {
    disableUserInput false;
    ["dontcreate",false,true] call BIS_fnc_endMission;
    };
-   
+
   //ich bin schütze lass mich in ruhe.
   if ((player in _sch) OR (player in _cre) OR (player in _lor)) exitwith {
 	hint "Whitelist Checked";
 	sleep 1;
-	[4] execVM "loadgear.sqf"; 
+	[4] execVM "loadgear.sqf";
 	};
 };
