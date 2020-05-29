@@ -1,6 +1,8 @@
 ["fnc_whitelist", {
 	diag_log "[XERXES] Whitelisting loading";
 	hint "Whitelisting loading";
+	params ["_id","_unit"];
+	diag_log "TRY!A";
 
 	private ["_lor", "_mlvl", "_plvl", "_unic", "_blck", "_med", "_pio", "_spe", "_sch", "_r_lor" ,"_r_med","_r_pio","_r_spe", "_cre", "_r_cre", "_r_mai", "_handle"];
 
@@ -20,17 +22,37 @@
 
 	sleep 1;
 
+	
+	db_var_startParams = _this;
+	ResultContent = nil;
+	serverRunningQuery = true;
+	_query = call compile ("extDB3" callExtension format ["0:MilSimDBquery:db_get_player:%1", _id]);
+	_result = _query select 1;
+	_result = _result select 0;
+
+	_id = parseNumber (_result select 0);
+	_name = _result select 1;
+	_mlvl = parseNumber (_result select 4);
+	_plvl = parseNumber (_result select 5);
+	_unic = parseNumber (_result select 6);
+	_blck = parseNumber (_result select 7);
+
+	_unit setVariable ["id", _id, true];
+	_unit setVariable ["mlvl", _mlvl, true];
+	_unit setVariable ["plvl", _plvl, true];
+	_unit setVariable ["unic", _unic, true];
+	_unit setVariable ["blck", _blck, true];
+
+
+diag_log format ["[XERXES] %1 auf Slot %2 mit Variablen id=%3, mlvl=%4, plvl=%5, unic=%6, blck=%7 beschrieben", _name, _unit, _id, _mlvl, _plvl, _unic, _blck];
+
 	while {true} do {
 
-		waitUntil {!isNull player};
-		waitUntil {(vehicle player) == player};
-		waitUntil {(getPlayerUID player) != ""};
+		waitUntil {!isNull _unit};
+		waitUntil {(vehicle _unit) == player};
+		waitUntil {(getPlayerUID _unit) != ""};
 		hint "Whitelisting loading ... ...";
 
-
-		_id = getPlayerUID player;
-		_unit = player;
-		["db_get_data", [_id, _unit]] call CBA_fnc_globalEvent;
 		sleep 1;
 		_lor = [a_1];
 		_med = [m_1,m_2,m_3,m_4,m_5,m_6,m_7,m_8,m_9,m_10,m_11,m_12,m_13,m_14,m_15];
@@ -43,7 +65,7 @@
 		hint "Movement detected, runnig Slot check ...";
 		_reload = false;
 		//Whitelist für slot "a_1" nur für Lord
-		if (player in _lor) exitwith
+		if (_unit in _lor) exitwith
 			{
 			if (_id != "76561198056732315") exitwith{
 				titleText ["", "BLACK OUT"];
@@ -60,10 +82,10 @@
 		};
 
 		//Whitelist für Sani. Kann ja jeder kommen der mal ein Pflaster benutzt hat.
-		if ((player in _med)) exitwith {
+		if ((_unit in _med)) exitwith {
 			hint "Medic";
 			sleep 1;
-			_mlvl = player getVariable "mlvl";
+			_mlvl = _unit getVariable "mlvl";
 			if ((_mlvl) >= 1) exitwith {
 				hint "Whitelist Checked";
 				sleep 1;
@@ -79,10 +101,10 @@
 		};
 
 		//Whitelist für Pioniere. Sandburgen baut jeder, Festungen  nur die, die es auch können
-		if ((player in _pio)) exitwith {
+		if ((_unit in _pio)) exitwith {
 			hint "Pionier";
 			sleep 1;
-			_plvl = player getVariable "plvl";
+			_plvl = _unit getVariable "plvl";
 			if ((_plvl) >= 1) exitwith {
 				hint "Whitelist Checked";
 				sleep 1;
@@ -98,10 +120,10 @@
 		};
 
 		//Whitelist für Spec-Ops. Wenn du in abosluter Dunkelheit Jermone sehen kannst, ohne das er grinst reden wir weiter.
-		if ((player in _spe)) exitwith {
+		if ((_unit in _spe)) exitwith {
 			hint "Unicorn";
 			sleep 1;
-			_unic = player getVariable "unic";
+			_unic = _unit getVariable "unic";
 			if ((_unic) >= 1) exitwith {
 				hint "Whitelist Checked";
 				sleep 1;
@@ -117,8 +139,8 @@
 		};
 
 		//Blacklist für MissionCreator. Hat da jemand etwas angestellt?
-		_blck = player getVariable "blck";
-		if ((player in _cre) && ((_blck) == 1))exitwith{
+		_blck = _unit getVariable "blck";
+		if ((_unit in _cre) && ((_blck) == 1))exitwith{
 			titleText ["", "BLACK OUT"];
 			disableUserInput true;
 			hint " Hat da jemand etwas angestellt?";
@@ -129,7 +151,7 @@
 		};
 
 		//ich bin schütze lass mich in ruhe.
-		if ((player in _sch) OR (player in _cre) OR (player in _lor)) exitwith {
+		if ((_unit in _sch) OR (_unit in _cre) OR (_unit in _lor)) exitwith {
 			hint "Whitelist Checked";
 			sleep 1;
 			[4] execVM "loadgear.sqf";
