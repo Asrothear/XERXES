@@ -31,7 +31,7 @@ switch (_class) do {
 		player addHandgunItem "acc_flashlight_pistol";
 		player addHandgunItem "optic_MRD";
 		player addHandgunItem "11Rnd_45ACP_Mag";
-		player forceAddUniform "UK3CB_BAF_U_Smock_MTP";
+		player forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP";
 		player addVest "UK3CB_BAF_V_Osprey_Medic_D";
 		player addBackpack "UK3CB_BAF_B_Bergen_MTP_Medic_L_B";
 		player addMagazine "Laserbatteries";
@@ -98,7 +98,7 @@ switch (_class) do {
     player addHandgunItem "acc_flashlight_pistol";
     player addHandgunItem "optic_MRD";
     player addHandgunItem "11Rnd_45ACP_Mag";
-    player forceAddUniform "UK3CB_BAF_U_Smock_MTP";
+    player forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP";
     player addVest "UK3CB_BAF_V_Osprey_Grenadier_A";
     player addBackpack "UK3CB_BAF_B_Bergen_MTP_Engineer_L_A";
     player addMagazine "Laserbatteries";
@@ -167,7 +167,7 @@ switch (_class) do {
 		player addHandgunItem "acc_flashlight_pistol";
 		player addHandgunItem "optic_MRD";
 		player addHandgunItem "11Rnd_45ACP_Mag";
-		player forceAddUniform "UK3CB_BAF_U_Smock_MTP";
+		player forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP";
 		player addVest "UK3CB_BAF_V_Osprey_Medic_D";
 		player addBackpack "UK3CB_BAF_B_Bergen_MTP_Medic_L_B";
 		player addMagazine "Laserbatteries";
@@ -234,7 +234,7 @@ switch (_class) do {
     player addHandgunItem "acc_flashlight_pistol";
     player addHandgunItem "optic_MRD";
     player addHandgunItem "11Rnd_45ACP_Mag";
-    player forceAddUniform "UK3CB_BAF_U_Smock_MTP";
+    player forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP";
     player addVest "UK3CB_BAF_V_Osprey_Rifleman_B";
     player addBackpack "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_C";
     player addMagazine "Laserbatteries";
