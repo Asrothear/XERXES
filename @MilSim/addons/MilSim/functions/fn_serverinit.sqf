@@ -47,6 +47,10 @@ TrainingCourse_Server_Blocked = !TrainingCourse_Server_Blocked;
 "hello" remoteExec ["hint", _unit];
  }] call CBA_fnc_addEventHandler;
 
+diag_log "[XERXES] Load Server-Side Whitelist..."
+[] execVM "\MilSim\functions\fn_db_connect.sqf";
+diag_log "[XERXES] Server-Side Whitelist Loaded";
+
 removeAllActions arsenal_1;
 [arsenal_1, ["Standart Gear Laden",{[] execVM "whitelist.sqf";}, [], 6, false, true, "", "", 6]] remoteExec ["addAction",-2,true];
 [arsenal_1, ["Arsenal",{[player, player, true] call ace_arsenal_fnc_openBox}, [], 6, false, true, "", "", 6]] remoteExec ["addAction",-2,true];
