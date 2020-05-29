@@ -74,7 +74,8 @@ diag_log format ["[XERXES] %1 auf Slot %2 mit Variablen id=%3, mlvl=%4, plvl=%5,
 				sleep 5;
 				titleText ["", "BLACK IN"];
 				disableUserInput false;
-				["noChef",false,true] call BIS_fnc_endMission;
+				["noChef",false,true] remoteExecCall ['BIS_fnc_endMission',_unit];
+				//["noChef",false,true] call BIS_fnc_endMission;
 			};
 			hint "Whitelist Checked";
 			sleep 1;
