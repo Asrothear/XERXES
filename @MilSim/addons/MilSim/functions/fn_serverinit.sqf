@@ -1,5 +1,6 @@
 TrainingCourse_Server_Blocked = false;
 TrainingCourse_Blocked = True;
+sens = True;
 publicVariable "TrainingCourse_Blocked";
 top_value = 1.5;
 publicVariable "top_value";
@@ -100,6 +101,17 @@ while {true} do {
 	}else{
 		TrainingCourse_Blocked = False;
 		publicVariable "TrainingCourse_Blocked";
+	};
+	sleep 0.5;
+};
+
+while {true} do {
+	if (sens) then {
+		sens = True;
+		publicVariable "sens";
+	}else{
+		sens = False;
+		publicVariable "sens";
 	};
 	sleep 0.5;
 };

@@ -6,7 +6,7 @@ _class = _this select 0;
 hint "AGB Gear-Loader";
 sleep 20;
 hint "Waiting for Player movement";
-waituntil {(speed player > 1)};
+waituntil {((speed player > 2) || (speed player < -2))};
 switch (_class) do {
     case 1:
 	{
@@ -66,7 +66,6 @@ switch (_class) do {
 		for "_i" from 1 to 5 do {player addItemToBackpack "ACE_splint";};
 		for "_i" from 1 to 3 do {player addItemToBackpack "ACE_WaterBottle";};
 		player addHeadgear "H_HelmetB_snakeskin";
-		comment "Add items";
 		player linkItem "ItemMap";
 		player linkItem "ItemCompass";
 		player linkItem "ACE_Altimeter";
@@ -202,7 +201,6 @@ switch (_class) do {
 		for "_i" from 1 to 5 do {player addItemToBackpack "ACE_splint";};
 		for "_i" from 1 to 3 do {player addItemToBackpack "ACE_WaterBottle";};
 		player addHeadgear "H_HelmetB_snakeskin";
-		comment "Add items";
 		player linkItem "ItemMap";
 		player linkItem "ItemCompass";
 		player linkItem "ACE_Altimeter";
