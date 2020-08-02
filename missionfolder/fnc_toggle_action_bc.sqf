@@ -1,4 +1,5 @@
 if (TrainingCourse_Blocked) exitwith{
+	
 	hint "Bullet Path Tracing blocked by Admin";
 	Action_BulletTracing = false;
 	removeAllActions player;
